@@ -69,6 +69,12 @@ jobs:
           - platform: ios
             arch: 'arm64'
             gdnative_flags: 'ios_arch=arm64'
+            sconsflags: 'ios_simulator=true'
+            os: 'macos-12'
+            cache-name: ios-arm64-simulator
+          - platform: ios
+            arch: 'arm64'
+            gdnative_flags: 'ios_arch=arm64'
             sconsflags: ''
             os: 'macos-12'
             cache-name: ios-arm64
