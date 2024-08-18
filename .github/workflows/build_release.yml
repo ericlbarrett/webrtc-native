@@ -236,7 +236,10 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: ${{ github.job }}-${{ matrix.platform }}-${{ matrix.arch }}
+          name: >-
+            ${{ github.job }}-${{ matrix.platform }}-${{ matrix.arch }}${{
+            contains(matrix.sconsflags, 'ios_simulator=true') && '-simulator' || ''
+            }}
           path: |
             bin/
             !bin/thirdparty/
